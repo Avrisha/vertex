@@ -1,0 +1,83 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(-45deg, #4a2970, #1a1a1a);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevents horizontal scrolling */
+}
+
+.error-container {
+  text-align: center;
+}
+
+.error-content {
+  max-width: 90%;
+  padding: 30px;
+  margin: 0 auto; /* Center the content */
+}
+
+h1 {
+  font-size: 5vw; /* Responsive font size */
+  margin-bottom: 20px;
+  position: relative; /* Position for pseudo-element */
+}
+
+h1::before {
+  content: attr(data-text); /* Use data-text attribute for content */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  -webkit-text-fill-color: transparent; /* Transparent text */
+  z-index: -1; /* Behind the actual text */
+  opacity: 0.5; /* Adjust gradient opacity */
+}
+
+h2 {
+  font-size: 3vw; /* Responsive font size */
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1vw; /* Responsive font size */
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.5vw 3vw; /* Responsive padding */
+  font-size: 1vw; /* Responsive font size */
+  background-color: #643a93;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5vw; /* Responsive border radius */
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3b1e54;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 8vw; /* Adjust font size for smaller screens */
+  }
+  h2 {
+      font-size: 6vw; /* Adjust font size for smaller screens */
+  }
+  p {
+      font-size: 3vw; /* Adjust font size for smaller screens */
+  }
+  .btn {
+      padding: 2vw 5vw; /* Adjust padding for smaller screens */
+      font-size: 3vw; /* Adjust font size for smaller screens */
+      border-radius: 1vw; /* Adjust border radius for smaller screens */
+  }
+}
